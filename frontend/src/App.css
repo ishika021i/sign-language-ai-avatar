@@ -158,6 +158,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  align-items: start;
 }
 
 .panel {
@@ -321,9 +322,23 @@ button {
 /* AVATAR */
 
 .avatar-view {
+  position: relative;
+  height: 480px;
+  min-height: 480px;
+  overflow: hidden;
+  max-height: 480px;
+
   background:
-    radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.15), transparent 36%),
-    linear-gradient(145deg, #091d20, #061416);
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(45, 212, 191, 0.15),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      #091d20,
+      #061416
+    );
 }
 
 .avatar-glow {
@@ -336,6 +351,12 @@ button {
   border-radius: 50%;
   background: rgba(45, 212, 191, 0.08);
   filter: blur(35px);
+}
+
+.avatar-view canvas {
+  width: 100% !important;
+  height: 480px !important;
+  display: block;
 }
 
 .avatar-person {
@@ -533,33 +554,29 @@ footer span:first-child {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
 
-  .topbar {
-    padding: 0 5%;
+  .workspace,
+  .results {
+    grid-template-columns: 1fr;
   }
 
-  .system-status {
-    display: none;
-  }
-
-  .dashboard {
-    width: 92%;
-    padding-top: 35px;
-  }
-
-  .welcome h2 {
-    font-size: 32px;
-  }
-
-  footer {
-    padding: 18px 5%;
-    flex-direction: column;
+  .welcome {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .camera-view {
+    height: 320px;
+  }
+
+  .avatar-view {
+    height: 480px;
+    min-height: 480px;
+    max-height: 480px;
   }
 
 }
-
 /* CAMERA VIDEO */
 
 .camera-view {

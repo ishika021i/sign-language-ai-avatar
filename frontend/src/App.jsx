@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-
+import AvatarScene from "./AvatarScene";
 function App() {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -125,7 +125,7 @@ function App() {
               : "Low confidence"
           );
         }
-        } else {
+        else {
           setPrediction("-");
           setConfidence(0);
           setHandsDetected(0);
@@ -450,21 +450,7 @@ function App() {
 
               <div className="avatar-glow"></div>
 
-              <div className="avatar-placeholder">
-
-                <div className="avatar-person">
-                  ♙
-                </div>
-
-                <h4>
-                  3D Avatar
-                </h4>
-
-                <p>
-                  The avatar will perform the detected sign
-                </p>
-
-              </div>
+              <AvatarScene />
 
             </div>
 
